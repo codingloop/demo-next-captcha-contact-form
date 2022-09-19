@@ -2,9 +2,9 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    host: "smtp.elasticemail.com",
+    port: 2525,
+    secure: false,
     auth: {
       user: process.env.MAIL_ID,
       pass: process.env.MAIL_PASSWORD,
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   try {
     await transporter.sendMail({
-      from: "email@email.com",
+      from: process.env.MAIL_ID,
       to: "ishwarbhat.work@gmail.com",
       subject: `Contact form submission from nextjs`,
       html: `<p>You have a contact form submission</p><br>
