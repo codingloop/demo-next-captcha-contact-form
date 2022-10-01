@@ -7,9 +7,10 @@ const nextConfig = {
 module.exports = {
   ...nextConfig,
   env: {
-    MAIL_HOST: process.env.MAIL_HOST,
-    MAIL_PORT: process.env.MAIL_PORT,
-    MAIL_ID: process.env.MAIL_ID,
-    MAIL_PASSWORD: process.env.MAIL_PASSWORD,
+    SMTP_HOST: process.env.SMTP_HOST,
+    SMTP_PORT: process.env.SMTP_PORT,
+    FROM_EMAIL_ADDRESS: process.env.FROM_EMAIL_ADDRESS,
+    FROM_EMAIL_PASSWORD: process.env.FROM_EMAIL_PASSWORD,
+    TO_EMAIL_ADDRESS: process.env.TO_EMAIL_ADDRESS,
   },
 };

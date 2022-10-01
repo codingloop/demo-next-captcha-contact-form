@@ -1,34 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Contact form API example with captcha
 
-## Getting Started
+This is a sample project on how to send an email through a contact form. Here `nodemailer` is used to send the email. Only SMTP hosts are available as of now.
 
-First, run the development server:
+### API usage
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Currently only SMTP email hosts are supported in this example
+- The API in this example is `/contact` which accepts a post call and the contact can be modified as per the requirement.
+- Content can be edited in `contact.js` file
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Required parameters
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Following parameters needs to be set in the env file or needs to be added as the environment variable in production environment.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `FROM_EMAIL_ADDRESS`
+- `FROM_EMAIL_PASSWORD`
+- `TO_EMAIL_ADDRESS`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### sample contents of env file
 
-## Learn More
+In local, the contents of `.env.local` file should be something like below
 
-To learn more about Next.js, take a look at the following resources:
+`SMTP_HOST=smtp-mail.outlook.com
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+SMTP_PORT=587
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+FROM_EMAIL_ADDRESS=sender@outlook.com
 
-## Deploy on Vercel
+FROM_EMAIL_PASSWORD=above_emails_password
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+TO_EMAIL_ADDRESS=contact_us@email.com
+`
