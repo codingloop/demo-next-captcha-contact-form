@@ -22,7 +22,8 @@ Following parameters needs to be set in the env file or needs to be added as the
 
 In local, the contents of `.env.local` file should be something like below
 
-`SMTP_HOST=smtp-mail.outlook.com
+```
+SMTP_HOST=smtp-mail.outlook.com
 
 SMTP_PORT=587
 
@@ -31,4 +32,8 @@ FROM_EMAIL_ADDRESS=sender@outlook.com
 FROM_EMAIL_PASSWORD=above_emails_password
 
 TO_EMAIL_ADDRESS=contact_us@email.com
-`
+```
+
+### Coming
+
+Captcha exaample is yet to be added
